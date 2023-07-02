@@ -56,6 +56,17 @@ export const Navbar = () => {
           NOMAD EXPLORE
           <i className="fa-solid fa-earth-americas"></i>
         </Link>
+            <div className="navbar-icons text-white ms-5">
+              <a href="https://twitter.com/NomadExplore" target="_blank" rel="noopener noreferrer">
+                <i className="twitter-icon fa-brands fa-twitter text-white"></i>
+              </a>
+              <a href="https://twitter.com/NomadExplore" target="_blank" rel="noopener noreferrer">
+                <i className="instagram-icon fa-brands fa-instagram text-white"></i>
+              </a>
+              <a href="https://twitter.com/NomadExplore" target="_blank" rel="noopener noreferrer">
+                <i className="facebook-icon fa-brands fa-facebook text-white"></i>
+              </a>
+            </div>
         <button
           className="navbar-toggler"
           type="button"
@@ -71,17 +82,6 @@ export const Navbar = () => {
         </button>
         <div className={`collapse navbar-collapse ${navbarOpen ? 'show' : ''}`} id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-            <div className="navbar-icons text-white">
-              <a href="https://twitter.com/NomadExplore" target="_blank" rel="noopener noreferrer">
-                <i className="twitter-icon fa-brands fa-twitter text-white"></i>
-              </a>
-              <a href="https://twitter.com/NomadExplore" target="_blank" rel="noopener noreferrer">
-                <i className="instagram-icon fa-brands fa-instagram text-white"></i>
-              </a>
-              <a href="https://twitter.com/NomadExplore" target="_blank" rel="noopener noreferrer">
-                <i className="facebook-icon fa-brands fa-facebook text-white"></i>
-              </a>
-            </div>
             <Link to="/aboutus" className="nav-link text-white" onClick={toggleNavbar}>
               About Us
             </Link>

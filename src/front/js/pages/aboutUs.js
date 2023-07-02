@@ -1,5 +1,5 @@
 import React from "react";
-import "./AboutUs.css"
+import "../../styles/aboutUs.css"
 
 export const AboutUs = () => {
   return (
@@ -7,7 +7,7 @@ export const AboutUs = () => {
       <div className="row">
         <div className="aboutus-description col-sm-12 text-center">
           <h1 className="aboutus-title">ABOUT NOMAD EXPLORE</h1>
-          <hr className="border-top mb-4" />
+          {/* <hr className="border-top mb-4" /> */}
           <div className="text-container1">
             <p className="mb-4">
               Welcome to! I am pleased to introduce you to our exciting project: <strong>NomadExplore</strong>. It is an innovative web application designed to help you discover your ideal tourist destination based on your visual preferences. With NomadExplore, we offer you a personalized and unique experience by combining your tastes and preferences in one easy-to-use tool.
@@ -17,7 +17,7 @@ export const AboutUs = () => {
             <p className="mb-4">
               Once you have completed the selection of the image series, our recommendation algorithm will analyze your preferences and generate a tourist destination suggestion that fits your visual tastes. This recommendation will be backed by the data collected during your selection process and will take into account your preferences for each category.
             </p>
-            <hr className="border-top" />
+            {/* <hr className="border-top" /> */}
           </div>
         </div>
 

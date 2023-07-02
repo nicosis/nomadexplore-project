@@ -4,10 +4,10 @@ import '../../styles/forms.css'
 import { Link, useNavigate } from "react-router-dom";
 
 export const SignUp = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [ name, setName ] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ password, setPassword ] = useState("");
+  const [ message, setMessage ] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,17 +16,17 @@ export const SignUp = () => {
     if (message) {
       timeoutId = setTimeout(() => {
         setMessage("");
-      }, 5000);
+      }, 3000);
     }
 
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [message]);
+  }, [ message ]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await fetch(process.env.BACKEND_URL + "/api/signup", {
         method: "POST",
@@ -35,15 +35,15 @@ export const SignUp = () => {
         },
         body: JSON.stringify({ name, email, password }),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
-        console.log("User created");
-        setMessage("User created successfully!");
-        setTimeout(() => {
-          navigate("/login");
-        }, 3000);
+        // console.log("User created");
+        // setMessage("User created successfully!");
+
+        // Auto login after successful registration
+        loginAfterSignUp(email, password);
       } else {
         console.error("Error creating user");
         if (response.status === 400) {
@@ -51,6 +51,44 @@ export const SignUp = () => {
         } else {
           setMessage("There was an error creating the user. Please try again.");
         }
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  // Function to handle automatic login after successful registration
+  const loginAfterSignUp = async (email, password) => {
+    try {
+      const loginUser = {
+        email: email,
+        password: password,
+      };
+
+      const response = await fetch(process.env.BACKEND_URL + "/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginUser),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const token = data.token;
+        const email = data.email;
+        const name = data.name;
+        localStorage.setItem("miTokenJWT", token);
+        localStorage.setItem("loggedUserEmail", email);
+        localStorage.setItem("loggedUserName", name);
+
+        // Redireccionar después de mostrar el mensaje por 3 segundos
+        setMessage("User created successfully!");
+        setTimeout(() => {
+          navigate("/selection");
+        }, 3000);
+      } else {
+        console.error("Error logging in after registration");
       }
     } catch (error) {
       console.error("Error:", error);

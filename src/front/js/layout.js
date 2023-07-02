@@ -5,17 +5,15 @@ import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
 import { Selection } from "./pages/selection";
-import { AboutUs } from "./pages/AboutUs"
+import { AboutUs } from "./pages/aboutUs"
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { SignUp } from "./pages/signUp";
 import { Login } from "./pages/login";
-import { Destinations } from "./pages/Destinations";
 import { Recomendation } from "./pages/recomendation";
 import { Planner } from "./pages/planner";
-import { DestinationCard } from "./pages/destinationCard";
 import { DestinationSingle } from "./pages/destinationSingle";
 
 //create your first component
@@ -36,7 +34,6 @@ const Layout = () => {
                         <Route element={<Recomendation />} path="/destination" />
                         <Route element={<Selection />} path="/selection" />
                         <Route element={<AboutUs />} path="/aboutus" />
-                        <Route element={<Destinations />} path="/destinations" />
                         <Route element={<SignUp />} path="/signup" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Planner />} path="/planner" />

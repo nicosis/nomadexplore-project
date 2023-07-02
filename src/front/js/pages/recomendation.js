@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import destinationWeights from '../data/destinations.json';
 import { DestinationCard } from "./destinationCard";
-import "./recomendation.css"
+import "../../styles/recomendation.css"
 
 export const Recomendation = () => {
   const { store, actions } = useContext(Context);
