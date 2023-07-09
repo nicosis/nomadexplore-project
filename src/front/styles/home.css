@@ -1,43 +1,54 @@
-/*
-    home.css: This website contains selectors only used in home.css
-
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
-
-.landing {
+.home-body {
+    background-image: url(../../../public/home-palm.jpg);
+    width: 100%;
+    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    overflow: hidden; 
+    align-items: center;
+    overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    background-color: black;
 }
 
-.title{
+.home-title {
     color: white;
     font-size: 80px;
-    @media (max-width: 1024px){
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 1024px) {
+    .home-title {
         font-size: 60px;
-        @media (max-width: 500px) {
-            font-size: 50px;
-            @media (max-width: 400px) {
-                font-size: 40px;
-                @media (max-width: 280px) {
-                    font-size: 30px;
-                }
-            }
-        }
-    }   
+    }
 }
 
-.container-button {
-    margin-top: 30px;
+@media (max-width: 500px) {
+    .home-title {
+        font-size: 50px;
+    }
 }
 
-.btn-registrer {
+@media (max-width: 400px) {
+    .home-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 280px) {
+    .home-title {
+        font-size: 30px;
+    }
+}
+
+.container-btn-register {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-register {
     width: 15em;
     height: 3.5em;
     border-radius: 30em;
@@ -45,16 +56,18 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: none;
     position: relative;
-    overflow: hidden;
     z-index: 2;
     box-shadow: 8px 8px 16px #c5c5c5,
              6px 6px 12px #ffffff;
-    @media (max-width: 300px){
+}
+
+@media (max-width: 500px) {
+    .btn-register {
         font-size: 12px;
     }
 }
 
-.btn-registrer::before {
+.btn-register::before {
     content: '';
     width: 0;
     height: 3.5em;
@@ -66,38 +79,8 @@
     transition: .5s ease;
     display: block;
     z-index: -1;
-   }
-   
-.btn-registrer:hover::before {
+}
+
+.btn-register:hover::before {
     width: 15em;
-   }
-
-.carousel-container {
-    width: 500px; /* Ajusta el ancho según tus necesidades */
-    height: 300px;
-    display: flex; /* Ajusta la altura según tus necesidades */
-    @media (max-width: 1024px) {
-        width: 400px;
-        height: 200px;
-        @media (max-width: 850px) {
-            width: 280px;
-            height: 180px;
-            @media (max-width: 280px) {
-              width: 230px;
-              height: 130px;
-            }
-          }
-      }
-   
-  }
-  
-.carousel-inner img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-  
-  
-  
-
-  
+}

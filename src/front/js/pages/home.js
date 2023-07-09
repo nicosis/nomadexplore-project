@@ -1,23 +1,23 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import Palm from "../../img/palm.jpeg";
 import "../../styles/home.css";
+import palmImg from "/public/home-palm.jpg";
 
-
+// style={{ backgroundImage: `url(${Palm})` }}
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container-fluid landing px-5" style={{ backgroundImage: `url(${Palm})` }}>
+		<div className="container-fluid px-5 home-body" style={{ backgroundImage: `url(${palmImg})` }}>
 			<div className="row">
 				<div className="col-12 justify-content-center alig-content-center">
-					<h1 className="title">DISCOVER AND FIND THE PERFECT DESTINATION FOR U</h1>
+					<h1 className="home-title">DISCOVER THE PERFECT DESTINATION FOR YOU</h1>
 				</div>
-				<div className="col-12 container-button">
+				<div className="col-12 container-btn-register">
 						<Link to="/signup">
-							<button className="btn-registrer">REGISTER AND ENJOY</button>
+							<button className="btn-register">REGISTER AND ENJOY</button>
 						</Link>
 					</div>
 				</div>

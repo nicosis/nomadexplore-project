@@ -73,7 +73,6 @@ export const Navbar = () => {
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup"
-          // aria-expanded="false"
           aria-expanded={navbarOpen ? "true" : "false"}
           aria-label="Toggle navigation"
           onClick={toggleNavbar}
